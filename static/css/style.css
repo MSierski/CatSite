@@ -1,12 +1,21 @@
 .photo {
-    margin-left: auto;
-    margin-right: auto;
     display:inline-block;
-    width: 30%;
-    height: auto;
+    width: 300px;
+    min-height: 300px;
     border: none;
     border-color: green;
-    padding: 15px;
+    padding:10px;
+
+.carousel {
+ height:500px;
+ width:500px;
+}
+
+input {
+  border: 1px solid #000;
+}
+
+
 
 }
 .photo:hover {

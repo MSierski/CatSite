@@ -8,9 +8,29 @@
         <!--<a href="/">Strona domowa</a>-->
 <!--</div>-->
 {% block body %}
+<div class="container">
+<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+<h1 class="display-4">Kontakt</h1>
+<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas aliquet justo
+fermentum dolor sagittis vulputate.</p>
+
+
  <address>
 <a href="mailto:webmaster@example.com">Mateusz Sierski</a>.<br>
 ul. XYZ, 11-111 Białystok<br>
 Polska
  </address>
+
+
+<form action="mailto:XXmatis589XX@gmail.com" method="POST" enctype="multipart/form-data" name="EmailForm" >
+ <label for="nick">Nick:</label><br>
+ <input class="test" type="text" id="nick" name="nick"><br>
+ <label for="email">E-mail:</label><br>
+ <input class="test" type="text" id="email" name="email"><br>
+ Tresc maila:<br>
+ <textarea name="tresc" rows="6" cols="120"></textarea><br>
+ <input class="test" type="submit" value="Submit">
+</form>
+</div>
+</div>
 {% endblock %}
