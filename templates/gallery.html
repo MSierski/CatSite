@@ -16,49 +16,75 @@ fermentum dolor sagittis vulputate.</p>
 <div class="container">
   <div class="row">
     <div class=".col-sm-">
-      <img class='photo' src="{{ url_for('static', filename='Kot.jpg') }}" alt="Cat1">
+      <a href="{{ url_for('static', filename='Kot.jpg') }}" data-toggle="lightbox"  data-gallery="my-gallery">
+      <img class='photo img-fluid' src="{{ url_for('static', filename='Kot.jpg') }}" alt="Cat1" >
+      </a>
     </div>
     <div class=".col-sm-">
-      <img class='photo' src="{{ url_for('static', filename='Kot.jpg') }}" alt="Cat1">
+      <a href="{{ url_for('static', filename='Kot.jpg') }}" data-toggle="lightbox"  data-gallery="my-gallery">
+      <img class='photo img-fluid' src="{{ url_for('static', filename='Kot.jpg') }}" alt="Cat1" >
+      </a>
     </div>
     <div class=".col-sm-">
-      <img class='photo' src="{{ url_for('static', filename='Kot.jpg') }}" alt="Cat1">
+      <a href="{{ url_for('static', filename='Kot.jpg') }}" data-toggle="lightbox"  data-gallery="my-gallery">
+      <img class='photo img-fluid' src="{{ url_for('static', filename='Kot.jpg') }}" alt="Cat1" >
+      </a>
     </div>
   </div>
 </div>
 <div class="container">
   <div class="row">
     <div class=".col-sm-">
-      <img class='photo' src="{{ url_for('static', filename='Kot1.jpg') }}" alt="Cat2">
+      <a href="{{ url_for('static', filename='Kot.jpg') }}" data-toggle="lightbox"  data-gallery="my-gallery">
+      <img class='photo img-fluid' src="{{ url_for('static', filename='Kot.jpg') }}" alt="Cat1" >
+      </a>
     </div>
     <div class=".col-sm-">
-      <img class='photo' src="{{ url_for('static', filename='Kot1.jpg') }}" alt="Cat2">
+      <a href="{{ url_for('static', filename='Kot.jpg') }}" data-toggle="lightbox"  data-gallery="my-gallery">
+      <img class='photo img-fluid' src="{{ url_for('static', filename='Kot.jpg') }}" alt="Cat1" >
+      </a>
     </div>
     <div class=".col-sm-">
-      <img class='photo' src="{{ url_for('static', filename='Kot1.jpg') }}" alt="Cat2">
+      <a href="{{ url_for('static', filename='Kot.jpg') }}" data-toggle="lightbox"  data-gallery="my-gallery">
+      <img class='photo img-fluid' src="{{ url_for('static', filename='Kot.jpg') }}" alt="Cat1" >
+      </a>
     </div>
   </div>
 </div>
 <div class="container">
   <div class="row">
     <div class=".col-sm-">
-      <img class='photo' src="{{ url_for('static', filename='Kot2.jpg') }}" alt="Cat3">
+      <a href="{{ url_for('static', filename='Kot.jpg') }}" data-toggle="lightbox"  data-gallery="my-gallery">
+      <img class='photo img-fluid' src="{{ url_for('static', filename='Kot.jpg') }}" alt="Cat1" >
+      </a>
     </div>
     <div class=".col-sm-">
-      <img class='photo' src="{{ url_for('static', filename='Kot3.jpg') }}" alt="Cat4">
+      <a href="{{ url_for('static', filename='Kot.jpg') }}" data-toggle="lightbox"  data-gallery="my-gallery">
+      <img class='photo img-fluid' src="{{ url_for('static', filename='Kot.jpg') }}" alt="Cat1" >
+      </a>
     </div>
     <div class=".col-sm-">
-      <img class='photo' src="{{ url_for('static', filename='Kot3.jpg') }}" alt="Cat4">
+      <a href="{{ url_for('static', filename='Kot.jpg') }}" data-toggle="lightbox"  data-gallery="my-gallery">
+      <img class='photo img-fluid' src="{{ url_for('static', filename='Kot.jpg') }}" alt="Cat1" >
+      </a>
     </div>
   </div>
 </div>
-<!--<div class="tlo">-->
-  <!--<img class='photo' src="{{ url_for('static', filename='Kot.jpg') }}" alt="Cat1">-->
-  <!--<img class='photo' src="{{ url_for('static', filename='Kot1.jpg') }}" alt="Cat2">-->
-  <!--<img class='photo' src="{{ url_for('static', filename='Kot2.jpg') }}" alt="Cat3">-->
-  <!--<img class='photo' src="{{ url_for('static', filename='Kot3.jpg') }}" alt="Cat4">-->
-<!--</div>-->
 </div>
 </div>
+
+<script type="text/javascript">
+  $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+  event.preventDefault();
+  $(this).ekkoLightbox();
+
+  $(this).ekkolightbox({
+  loadingMessage: "Loading…",
+  showArrows: true,
+  leftArrow: "<<<",
+  rightArrow: ">>>"
+  });
+});
+</script>
 
 {% endblock %}
