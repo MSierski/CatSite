@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %} O mnie {% endblock %}
+
+<!--<div class="menu">-->
+        <!--<a href="{{ url_for('about')}}">O mnie</a>-->
+        <!--<a href="{{ url_for('gallery')}}">Galeria</a>-->
+        <!--<a href="/">Strona domowa</a>-->
+<!--</div>-->
+{% block body %}
+    {% for post in posts %}
+        <div class='post'>
+            <p>{{ post['created'] }}</p>
+            <h2>{{ post['title'] }}</h2>
+            <p>{{ post['content'] }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -16,6 +16,9 @@
 <title>{% block title %} {% endblock %}</title>
 </head>
 <body>
+{% for message in get_flashed_messages() %}
+<div class="alert">{{ message }}</div>
+{% endfor %}
 {% include "include/menu.html" %}
 {% block body %}
 {% endblock %}

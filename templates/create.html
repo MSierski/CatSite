@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %} Dodaj nowy post {% endblock %}
+<!--<div class="menu">-->
+        <!--<a href="{{ url_for('contact')}}">Kontakt</a>-->
+        <!--<a href="{{ url_for('gallery')}}">Galeria</a>-->
+        <!--<a href="/">Strona domowa</a>-->
+<!--</div>-->
+{% block body %}
+
+    <form method="post">
+        <label for="title">Nick gościa</label>
+        <br>
+        <input type="text" name="title"
+               placeholder="Post title"
+               value="{{ request.form['title'] }}"></input>
+        <br>
+
+        <label for="content">Treść wiadomości</label>
+        <br>
+        <textarea name="content"
+                  placeholder="Post content"
+                  rows="15"
+                  cols="60"
+                  >{{ request.form['content'] }}</textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+
+{% endblock %}
