@@ -1,11 +1,35 @@
-from flask import Flask
+from flask import Flask, flash
 from flask import request
 from flask import render_template
 from flask import abort, redirect, url_for, make_response
 import sqlite3
+from flask_dance.contrib.github import make_github_blueprint, github
+import secrets
+import os
 
 app = Flask(__name__, template_folder='./templates', static_folder='./static')
 app.config['SECRET_KEY'] = '2137'
+app.secret_key = secrets.token_hex(16)
+os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
+
+github_blueprint = make_github_blueprint(
+    client_id="3e02622f9eb22b93fbd3",
+    client_secret="c8ed70634803e3747f0a18b23028653165b34df0",
+)
+
+app.register_blueprint(github_blueprint, url_prefix='/login')
+
+
+@app.route('/index')
+def github_login():
+    if not github.authorized:
+        return redirect(url_for('github.login'))
+    else:
+        account_info = github.get('/user')
+        if account_info.ok:
+            account_info_json = account_info.json()
+            return '<h1>Your Github name is {}'.format(account_info_json['login'])
+            return '<h1>Request failed!</h1>'
 
 @app.route('/create/', methods=('GET', 'POST'))
 def create():
