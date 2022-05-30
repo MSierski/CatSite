@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %} O mnie {% endblock %}
+<!--<div class="menu">-->
+        <!--<a href="{{ url_for('contact')}}">Kontakt</a>-->
+        <!--<a href="{{ url_for('gallery')}}">Galeria</a>-->
+        <!--<a href="/">Strona domowa</a>-->
+<!--</div>-->
+{% block body %}
+
+{% if data %}
+
+<p> {{data}} </p>
+
+{% endif %}
+
+{% endblock %}

@@ -6,6 +6,7 @@ import sqlite3
 from flask_dance.contrib.github import make_github_blueprint, github
 import secrets
 import os
+import requests
 
 app = Flask(__name__, template_folder='./templates', static_folder='./static')
 app.config['SECRET_KEY'] = '2137'
@@ -19,6 +20,11 @@ github_blueprint = make_github_blueprint(
 
 app.register_blueprint(github_blueprint, url_prefix='/login')
 
+
+@app.route('/Music')
+def get_music():
+    music = requests.get('http://localhost:5000/')
+    return render_template('Music.html', data = music)
 
 @app.route('/index')
 def github_login():
@@ -85,6 +91,6 @@ def not_found_error(error):
     return render_template('404.html'), 404
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0")
+    app.run(host="0.0.0.0", port=80)
 
 
